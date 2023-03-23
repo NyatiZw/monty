@@ -70,9 +70,9 @@ void _pall(stack_t **stack, unsigned int line_number);
 void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
 
 /* more_functions */
-char *_strtoky(char *s, char d);
 int _strcmp(char *s1, char *s2);
 int _search(char *s, char c);
+char *_strtoky(char *s, char *d);
 
 /* doubly linked list functions */
 stack_t *add_dnodeint(stack_t **head, const int n);

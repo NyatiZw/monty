@@ -20,7 +20,7 @@ void _push(stack_t **doubly, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	for (j = 0; (global_variable.arg[j]) != '\0'; j++)
+	for (j = 0; global_variable.arg[j] != '\0'; j++)
 	{
 		if (!isdigit(global_variable.arg[j]) && global_variable.arg[j] != '-')
 		{
@@ -50,10 +50,10 @@ void _push(stack_t **doubly, unsigned int line_number)
  * @cline: line numbers
  * Return: void
  */
-void _pall(stack_t **doubly, unsigned int cline)
+void _pall(stack_t **doubly, unsigned int line_number)
 {
 	stack_t *aux;
-	(void)cline;
+	(void)line_number;
 
 	aux = *doubly;
 
