@@ -35,7 +35,7 @@
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
-typedef struct instructin_s
+typedef struct instruction_s
 {
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
@@ -67,6 +67,14 @@ extern global_t global_variable; /* Declaration of variable */
 /* opcode_instructions */
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
+
+/* get_function */
+void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_num);
+
+/* more_functions */
+char *_strtok(char *s, char c);
+int _strcmp(char *s1, char *s2);
+int _search(char *s, char c);
 
 /* doubly linked list functions */
 stack_t *add_dnodeint(stack_t **head, const int n);

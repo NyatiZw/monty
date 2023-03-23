@@ -42,4 +42,3 @@ void _push(stack_t **doubly, unsigned int line_number)
 		add_dnodeint_end(doubly, i);
 	}
 }	
-		
