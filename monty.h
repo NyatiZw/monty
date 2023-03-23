@@ -72,7 +72,7 @@ void _pall(stack_t **stack, unsigned int line_number);
 void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_num);
 
 /* more_functions */
-char *_strtok(char *s, char c);
+char *_strtokk(char *s, char c);
 int _strcmp(char *s1, char *s2);
 int _search(char *s, char c);
 

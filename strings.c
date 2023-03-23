@@ -54,12 +54,12 @@ int _search(char *s, char c)
 }
 
 /**
- * _strtok - function to tokenize string
+ * _strtokk - function to tokenize string
  * @s: string to tokenize
  * @d: delimiter
  * Return: first partition
  */
-char *_strtok(char *s, char *d)
+char *_strtokk(char *s, char *d)
 {
 	static char *x;
 	int i = 0, j = 0;
