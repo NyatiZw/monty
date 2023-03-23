@@ -41,6 +41,39 @@ typedef struct instructin_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern int global_variable; /* Declaration of variable */
+/**
+ * struct global_s - global struct
+ * @lifo: stack or queue
+ * @cont: current line
+ * arg: parameter
+ * @head: doubly linked list
+ * @fd: file descriptor
+ * @buffer: input text
+ *
+ * Description: doubly linked list node structure
+ */
+typedef struct global_s
+{
+	int lifo;
+	unsigned int cont;
+	char *arg;
+	stack_t *head;
+	FILE *fd;
+	char *buffer;
+} global_t;
+
+extern global_t global_variable; /* Declaration of variable */
+
+/* opcode_instructions */
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+
+/* doubly linked list functions */
+stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
+void free_dlistint(stack_t *head);
+
+/* freeing global variable */
+void free_global_variable(void);
 
 # endif /* _MONTY_H */
