@@ -41,4 +41,6 @@ typedef struct instructin_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern int global_variable; /* Declaration of variable */
+
 # endif /* _MONTY_H */
