@@ -11,6 +11,7 @@ void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_num)
 		{"push", _push};
 		{"pall", _pall};
 	}
+
 	int i;
 
 	for (i = 0; instruct[i].opcode; i++)
