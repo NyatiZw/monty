@@ -76,9 +76,10 @@ int main(int argc, char *argv[])
 	fd = check_input(argc, argv);
 	start_global_variable(fd);
 	nlines = getline(&global_variable.buffer, &size, fd);
+
 	while (nlines != -1)
 	{
-		lines[0] = _strtokk(global_variable.buffer, " \t\n");
+		lines[0] = _strtoky(global_variable.buffer, " \t\n ");
 		if (lines[0] && lines[0][0] != '#')
 		{
 			f = get_opcodes(lines[0]);
@@ -89,7 +90,7 @@ int main(int argc, char *argv[])
 				free_global_variable();
 				exit(EXIT_FAILURE);
 			}
-			global_variable.arg = _strtokk(NULL, " \t\n");
+			global_variable.arg = _strtoky(NULL, " \t\n");
 			f(&global_variable.head, global_variable.cont);
 		}
 		nlines = getline(&global_variable.buffer, &size, fd);

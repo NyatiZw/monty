@@ -3,11 +3,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <ctype.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include <stddef.h>
 #include <unistd.h>
 #include <sys/stat.h>
 
@@ -69,10 +67,10 @@ void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 
 /* get_function */
-void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_num);
+void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
 
 /* more_functions */
-char *_strtokk(char *s, char c);
+char *_strtoky(char *s, char d);
 int _strcmp(char *s1, char *s2);
 int _search(char *s, char c);
 
