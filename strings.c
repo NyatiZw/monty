@@ -34,6 +34,7 @@ int _strcmp(char *s1, char *s2)
 int _search(char *s, char c)
 {
 	int cont = 0;
+
 	while (s[cont] != '\0')
 	{
 		if (s[cont] == c)
