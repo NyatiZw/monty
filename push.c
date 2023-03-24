@@ -2,10 +2,10 @@
 /**
  * _push - add node to the stack
  * @head: stack head
- * @counter: line number
+ * @number: line number
  * Return: void
  */
-void _push(stack_t **head, unsigned int counter)
+void _push(stack_t **head, unsigned int number)
 {
 	int n, j = 0, flag = 0;
 
@@ -22,10 +22,18 @@ void _push(stack_t **head, unsigned int counter)
 				flag = 1;
 			}
 		}
+		if (flag == 1)
+		{
+			fprintf(stderr, "L%d: Usage: push integer\n", number);
+			fclose(global_variable.fd);
+			free(global_variable.content);
+			free_stack(*head);
+			exit(EXIT_FAILURE);
+		}
 	}
-	if (flag == 1)
+	else
 	{
-		fprintf(stderr, "L%d: Usage: push integer\n", counter);
+		fprintf(stderr, "L%d: Usage: push integer\n", number);
 		fclose(global_variable.fd);
 		free(global_variable.content);
 		free_stack(*head);
