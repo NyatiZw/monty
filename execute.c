@@ -50,7 +50,7 @@ int execute(char *content, stack_t **head, unsigned int counter, FILE *fd)
 	}
 	if (op && opst[i].opcode == NULL)
 	{
-		fprintf(stderr, "L%d: Unknown Instruction %s\n", counter, op);
+		fprintf(stderr, "L%d: Unknown Instruction %s\n", head, op);
 		fclose(fd);
 		free(content);
 		free_stack(*head);
