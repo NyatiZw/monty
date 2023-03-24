@@ -82,8 +82,7 @@ void *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 void free_stack(stack_t *head);
 
 /* get_function */
-ssize_t getstdin(char **lptr, unsigned int file);
-
+size_t getline(char **, size_t *, FILE *);
 /* more_functions */
 int execute(char *content, stack_t **head, unsigned int counter, FILE *fd);
 

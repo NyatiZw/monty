@@ -36,7 +36,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *fd)
 	if (op && opst[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: Unknown Instruction %s\n", counter, op);
-		fclose(file);
+		fclose(fd);
 		free(content);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
