@@ -12,15 +12,11 @@ void _push(stack_t **head, unsigned int number)
 	if (global_variable.arg)
 	{
 		if (global_variable.arg[0] == '-')
-		{
 			j++;
-		}
 		for (; global_variable.arg[j] != '\0'; j++)
 		{
 			if (global_variable.arg[j] > 57 || global_variable.arg[j] < 48)
-			{
 				flag = 1;
-			}
 		}
 		if (flag == 1)
 		{
@@ -41,13 +37,9 @@ void _push(stack_t **head, unsigned int number)
 	}
 	n = atoi(global_variable.arg);
 	if (global_variable.lifo == 0)
-	{
 		addnode(head, n);
-	}
 	else
-	{
 		addqueue(head, n);
-	}
 }
 
 /**
@@ -63,9 +55,7 @@ void _pall(stack_t **head, unsigned int number)
 
 	h = *head;
 	if (h == NULL)
-	{
 		return;
-	}
 	while (h)
 	{
 		printf("%d\n", h->n);
@@ -76,7 +66,7 @@ void _pall(stack_t **head, unsigned int number)
 /**
  * _pint - prints the top
  * @head: stack head
- * @counter: line number
+ * @number: line number
  * Return: void
  */
 void _pint(stack_t **head, unsigned int number)
