@@ -43,7 +43,7 @@ int execute(char *content, stack_t **head, unsigned int counter, FILE *fd)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
 		{
-			opst[i].f(stack, counter);
+			opst[i].f(head, counter);
 			return (0);
 		}
 		i++;
@@ -53,7 +53,7 @@ int execute(char *content, stack_t **head, unsigned int counter, FILE *fd)
 		fprintf(stderr, "L%d: Unknown Instruction %s\n", counter, op);
 		fclose(fd);
 		free(content);
-		free_stack(*stack);
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	return (1);
