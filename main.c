@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
-	global_variable.file = file;
+	global_variable.fd = file;
 	if(!file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);

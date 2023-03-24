@@ -7,7 +7,7 @@
  */
 void _queue(stack_t **head, unsigned int counter)
 {
-	(void)heaada;
+	(void)head;
 	(void)counter;
 	global_variable.lifo = 1;
 }

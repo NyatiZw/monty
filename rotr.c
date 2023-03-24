@@ -5,7 +5,7 @@
  * @counter: line number
  * Return: Void
  */
-void _rotr(stack_t **head, __attribbute__((unused)) unsigned int counter)
+void _rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
 	stack_t *copy;
 

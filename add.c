@@ -19,7 +19,7 @@ void _add(stack_t **head, unsigned int counter)
 	if (len < 2)
 	{
 		fprintf(stderr, "L%d: Can't add, stack too small\n", counter);
-		fclose(global_variable.file);
+		fclose(global_variable.fd);
 		free(global_variable.content);
 		free_stack(*head);exit(EXIT_FAILURE);
 	}

@@ -12,7 +12,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *fd)
 {
 	instruction_t opst[] = {
 		{"push", _push},
-		{"pall", _pall}'
+		{"pall", _pall},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
@@ -24,7 +24,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *fd)
 		return (0);
 	}
 	global_variable.arg = strtok(NULL, " \n\t");
-	while (opst[i].oopcode && op)
+	while (opst[i].opcode && op)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
 		{

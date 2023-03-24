@@ -13,7 +13,7 @@ void _pchar(stack_t **head, unsigned int counter)
 	if (!h)
 	{
 		fprintf(stderr, "L%d: Can't putchar stack empty\n", counter);
-		fclose(global_variable.file);
+		fclose(global_variable.fd);
 		free(global_variable.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
@@ -21,7 +21,7 @@ void _pchar(stack_t **head, unsigned int counter)
 	if (h->n > 127 || h->n < 0)
 	{
 		fprintf(stderr, "L%d: Can't putchar, out of range\n", counter);
-		fclose(global_variable.file);
+		fclose(global_variable.fd);
 		free(global_variable.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);

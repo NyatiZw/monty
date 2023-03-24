@@ -26,7 +26,7 @@ void _push(stack_t **head, unsigned int counter)
 	if (flag == 1)
 	{
 		fprintf(stderr, "L%d: Usage: push integer\n", counter);
-		fclose(global_variable.file);
+		fclose(global_variable.fd);
 		free(global_variable.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
