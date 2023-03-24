@@ -1,5 +1,5 @@
-#ifndef _MONTY_H
-#define _MONTY_H
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +7,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <sys/stat.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list reprresentation of a stack (or queue)
@@ -53,33 +53,47 @@ typedef struct instruction_s
 typedef struct global_s
 {
 	int lifo;
-	unsigned int cont;
 	char *arg;
-	stack_t *head;
 	FILE *fd;
-	char *buffer;
+	char *content;
 } global_t;
 
 extern global_t global_variable; /* Declaration of variable */
 
 /* opcode_instructions */
-void _push(stack_t **stack, unsigned int line_number);
-void _pall(stack_t **stack, unsigned int line_number);
+void _push(stack_t **head, unsigned int number);
+void _pall(stack_t **head, unsigned int number);
+void  _pint(stack_t **head, unsigned int number);
+void _pop(stack_t **head, unsigned int counter);
+void _swap(stack_t **head, unsigned int counter);
+void _add(stack_t **head, unsigned int counter);
+void _nop(stack_t ** head, unsigned int counter);
+void _sub(stack_t **head, unsigned int counter);
+void _div(stack_t **head, unsigned int counter);
+void _mul(stack_t **head, unsigned int counter);
+void _mod(stack_t **head, unsigned int counter);
+void _pchar(stack_t **head, unsigned int counter);
+void _pstr(stack_t **head, unsigned int counter);
+void _rotl(stack_t **head, unsigned int counter);
+void _rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+
+/* Handling memory */
+void *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+void free_stack(stack_t *head);
 
 /* get_function */
-void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
+ssize_t getstdin(char **lptr, unsigned int file);
 
 /* more_functions */
-int _strcmp(char *s1, char *s2);
-int _search(char *s, char c);
-char *_strtoky(char *s, char *d);
+int execute(char *content, stack_t **head, unsigned int counter, FILE *fd);
 
 /* doubly linked list functions */
-stack_t *add_dnodeint(stack_t **head, const int n);
-stack_t *add_dnodeint_end(stack_t **head, const int n);
-void free_dlistint(stack_t *head);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
+void _queue(stack_t **head, unsigned int counter);
+void _stack(stack_t **head, unsigned int counter);
 
-/* freeing global variable */
-void free_global_variable(void);
+/* freeing memory */
+char *clean_line(char *content);
 
 # endif /* _MONTY_H */
