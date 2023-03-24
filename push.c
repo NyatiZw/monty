@@ -15,9 +15,9 @@ void _push(stack_t **head, unsigned int counter)
 		{
 			j++;
 		}
-		for (; global_variable[j] != '\0'; j++)
+		for (; global_variable.arg[j] != '\0'; j++)
 		{
-			if (global_variable.arg[j] > 57 || global_variable[j] < 48)
+			if (global_variable.arg[j] > 57 || global_variable.arg[j] < 48)
 			{
 				flag = 1;
 			}
