@@ -44,11 +44,9 @@ typedef struct instruction_s
 /**
  * struct global_s - global struct
  * @lifo: stack or queue
- * @cont: current line
- * arg: parameter
- * @head: doubly linked list
+ * @arg: parameter
  * @fd: file descriptor
- * @buffer: input text
+ * @content: input text
  *
  * Description: doubly linked list node structure
  */
@@ -69,7 +67,7 @@ void  _pint(stack_t **head, unsigned int number);
 void _pop(stack_t **head, unsigned int counter);
 void _swap(stack_t **head, unsigned int counter);
 void _add(stack_t **head, unsigned int counter);
-void _nop(stack_t ** head, unsigned int counter);
+void _nop(stack_t **head, unsigned int counter);
 void _sub(stack_t **head, unsigned int counter);
 void _div(stack_t **head, unsigned int counter);
 void _mul(stack_t **head, unsigned int counter);
@@ -83,8 +81,9 @@ void _rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 void *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 void free_stack(stack_t *head);
 
-/* get_function */
+/* _get_function */
 size_t getline(char **, size_t *, FILE *);
+
 /* more_functions */
 int execute(char *content, stack_t **head, unsigned int counter, FILE *fd);
 

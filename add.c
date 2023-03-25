@@ -21,7 +21,8 @@ void _add(stack_t **head, unsigned int counter)
 		fprintf(stderr, "L%d: Can't add, stack too small\n", counter);
 		fclose(global_variable.fd);
 		free(global_variable.content);
-		free_stack(*head);exit(EXIT_FAILURE);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
 	}
 	h = *head;
 	aux = h->n + h->next->n;

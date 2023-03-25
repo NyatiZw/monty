@@ -2,9 +2,9 @@
 
 /**
  * execute - executes the opcode
- * @stack: head linked list 
+ * @head: head linked list
  * @counter: line_conter
- * @file: pointer to file
+ * @fd: pointer to file
  * @content: line content
  * Return: void
  */

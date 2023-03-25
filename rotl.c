@@ -7,7 +7,7 @@
  */
 void _rotl(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
-	stack_t *tmp = * head, *aux;
+	stack_t *tmp = *head, *aux;
 
 	if (*head == NULL || (*head)->next == NULL)
 	{

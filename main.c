@@ -1,6 +1,6 @@
 #include "monty.h"
 
-global_t global_variable = {0 , NULL, NULL, NULL};
+global_t global_variable = {0, NULL, NULL, NULL};
 
 /**
  * main - Entry point
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	}
 	fd = fopen(argv[1], "r");
 	global_variable.fd = fd;
-	if(!fd)
+	if (!fd)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
