@@ -7,7 +7,8 @@
  * Return: void
  */
 void _pchar(stack_t **head, unsigned int counter)
-{stack_t *h;
+{
+	stack_t *h;
 
 	h = *head;
 	if (!h)
