@@ -1,6 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define _GNU_SOURCE
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -80,9 +81,6 @@ void _rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 /* Handling memory */
 void *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 void free_stack(stack_t *head);
-
-/* _get_function */
-size_t getline(char **, size_t *, FILE *);
 
 /* more_functions */
 int execute(char *content, stack_t **head, unsigned int counter, FILE *fd);
